@@ -12,7 +12,15 @@ body {
 	background: rgb(var(--background-rgb));
 }
 
+/* Importar fuente Inter */
+@import url('https://rsms.me/inter/inter.css');
+
+/* Resto de estilos globales */
 @layer base {
+	html {
+		font-family: 'Inter var', system-ui, sans-serif;
+	}
+
 	:root {
 		--background: #f5f5f5;
 		--foreground: #414141;
