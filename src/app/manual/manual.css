@@ -1,0 +1,399 @@
+/* Estilos base y variables */
+:root {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --sidebar-width: 300px;
+  --header-height: 64px;
+  --gradient-text: linear-gradient(45deg, #1e40af, #3b82f6);
+  --gradient-hover: linear-gradient(45deg, #1e3a8a, #2563eb);
+  --animation-duration: 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); }
+  to { transform: scale(1); }
+}
+
+.manual-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Estilos del sidebar mejorados */
+.manual-sidebar {
+  width: var(--sidebar-width);
+  background: linear-gradient(135deg, #1e40af, #1e3a8a);
+  padding: 2rem 1.5rem;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Contenido principal mejorado */
+.manual-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  padding: 2.5rem 3rem;
+  max-width: calc(100vw - var(--sidebar-width));
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Secciones mejoradas */
+.manual-section {
+  scroll-margin-top: 2rem;
+  margin-bottom: 4rem;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: scaleIn 0.5s ease-out;
+}
+
+/* Títulos mejorados */
+.manual-section h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #e5e7eb;
+  position: relative;
+  letter-spacing: -0.02em;
+  transition: all 0.3s ease;
+}
+
+.manual-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: var(--gradient-text);
+  transition: width 0.3s ease;
+}
+
+.manual-section h2:hover::after {
+  width: 200px;
+}
+
+.manual-section h3 {
+  color: #1f2937;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.manual-section h3:hover {
+  transform: scale(1.02);
+  color: var(--primary-color);
+}
+
+.manual-section h4 {
+  color: #374151;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.manual-section h4:hover {
+  color: var(--primary-color);
+}
+
+/* Párrafos mejorados */
+.manual-section p {
+  color: #4b5563;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.manual-section p:hover {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* Listas mejoradas */
+.manual-section ul,
+.manual-section ol {
+  margin: 1.5rem 0 2rem 1.5rem;
+  color: #4b5563;
+}
+
+.manual-section li {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  position: relative;
+  padding-left: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.manual-section li:hover {
+  transform: translateX(5px);
+  color: var(--primary-color);
+}
+
+.manual-section ul li::before {
+  content: '•';
+  color: var(--primary-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.manual-section ul li:hover::before {
+  transform: scale(1.5);
+}
+
+/* Navegación mejorada */
+.manual-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.manual-nav li {
+  margin-bottom: 0.75rem;
+  opacity: 0;
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+.manual-nav li:nth-child(1) { animation-delay: 0.1s; }
+.manual-nav li:nth-child(2) { animation-delay: 0.2s; }
+.manual-nav li:nth-child(3) { animation-delay: 0.3s; }
+.manual-nav li:nth-child(4) { animation-delay: 0.4s; }
+.manual-nav li:nth-child(5) { animation-delay: 0.5s; }
+
+.manual-nav a {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.manual-nav a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.manual-nav a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.manual-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  transform: translateX(8px);
+  padding-left: 1.5rem;
+}
+
+.manual-nav a.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 600;
+  border-left: 4px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* FAQ mejorado */
+.faq-section {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.faq-item {
+  background-color: white;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+  font-weight: 600;
+  color: #1f2937;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  padding: 1.5rem;
+  background-color: #f8fafc;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #f1f5f9;
+  color: var(--primary-color);
+}
+
+.faq-answer {
+  color: #4b5563;
+  padding: 1.5rem;
+  line-height: 1.8;
+  background-color: white;
+  transform-origin: top;
+  animation: scaleIn 0.3s ease-out;
+}
+
+/* Efectos de hover mejorados */
+.manual-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrollbar personalizado mejorado */
+.manual-sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.manual-sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.manual-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.manual-sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive mejorado */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 260px;
+  }
+
+  .manual-content {
+    padding: 2rem;
+  }
+
+  .manual-section h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .manual-container {
+    flex-direction: column;
+  }
+
+  .manual-sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 1.5rem;
+  }
+
+  .manual-content {
+    margin-left: 0;
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+
+  .manual-section {
+    padding: 1.5rem;
+  }
+
+  .manual-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .manual-section h3 {
+    font-size: 1.5rem;
+  }
+
+  .manual-section h4 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Código */
+.manual-section code {
+  background-color: #f1f5f9;
+  color: #1e40af;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+}
+
+.manual-section pre {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-family: 'Fira Code', monospace;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Imágenes */
+.manual-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.8rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+} 

@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Host
+Host: https://sistema-pos.com
+
+# Sitemaps
+Sitemap: https://sistema-pos.com/sitemap.xml 
