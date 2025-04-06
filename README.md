@@ -118,4 +118,4 @@ Desarrollado por el [Josefo](https://portfolio-josefopro.vercel.app/)
 
 ---
 
-Hecho con ❤️ por el SENA
+Hecho con ❤️ para el SENA

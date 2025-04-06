@@ -4,11 +4,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ['sistema-pos.com'],
-  },
-  // Configuración para PWA
-  experimental: {
-    ppr: true,
-  },
+  }
 }
 
 module.exports = nextConfig 
