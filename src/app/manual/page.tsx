@@ -63,13 +63,13 @@ export default function ManualPage() {
                   <li>Contraseña (proporcionada por el administrador)</li>
                 </ul>
               </li>
-              <li>Haga clic en el botón "Ingresar"</li>
+              <li>Haga clic en el botón &quot;Ingresar&quot;</li>
             </ol>
           </InfoCard>
           
           <InfoCard title="Recuperación de Contraseña" className="mt-6">
             <ol className="list-decimal pl-4 space-y-2">
-              <li>Haga clic en "¿Olvidó su contraseña?"</li>
+              <li>Haga clic en &quot;¿Olvidó su contraseña?&quot;</li>
               <li>Introduzca su correo electrónico registrado</li>
               <li>Espere el correo de confirmación y siga las instrucciones</li>
               <li>Una vez completado el proceso, regrese al login para ingresar al sistema</li>
